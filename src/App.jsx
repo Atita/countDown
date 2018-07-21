@@ -14,7 +14,19 @@ constructor(props) {
 }
 
 changeDeadline() {
+
+    if (this.state.newDeadline === '' ) {
+// to do: bulletproof date data entry
+//|| Object.prototype.toString.call(this.state.newDeadline) != '[object Date]'
+
+        alert ('You should enter a date')
+    } else {
     this.setState({deadline:this.state.newDeadline});
+    }
+    let frm=document.getElementsByClassName('Deadline-Input');
+    frm.value='';
+    return false;
+
 }
 
     render() {
